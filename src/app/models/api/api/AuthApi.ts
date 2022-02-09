@@ -46,9 +46,7 @@ class Api {
         body: JSON.stringify({ email, password }),
       })
     ).json();
-    const {
-      message, token, refreshToken, userId,
-    } = await response;
+    const { message, token, refreshToken, userId } = await response;
     await this.setLocalStorage(userId, email, token, refreshToken);
     console.log(` message: ${message}, token, refreshToken, userId: ${userId}`);
   };
@@ -65,7 +63,10 @@ class Api {
 
   setLocalStorage = async (userId: string, email: string, token: string, refreshToken: string) => {
     Object.assign(this, {
-      userId, email, token, refreshToken,
+      userId,
+      email,
+      token,
+      refreshToken,
     });
     localStorage.setItem('userId', userId);
     localStorage.setItem('email', email);

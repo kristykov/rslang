@@ -33,8 +33,8 @@ class TestController {
       // eslint-disable-next-line max-len
       // const words = await this.api.getAllWords();
       // const word = await this.api.getWordById('5e9f5ee35eb9e72bc21af710');
-      await this.api.registerUser('Van', 'van@user1.com', 'Gfhjkm_123hhhh');
-      await this.api.signInUser('van@user1.com', 'Gfhjkm_123hhhh');
+      await this.api.registerUser('Van', 'van@user2.com', 'Gfhjkm_123hhhh');
+      await this.api.signInUser('van@user2.com', 'Gfhjkm_123hhhh');
     });
   }
 }
