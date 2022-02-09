@@ -56,8 +56,6 @@
 }
 
 .sign-out {
-  display: none;
-  visibility: hidden;
   font-size: 26px;
   text-decoration: none;
   color: #ffffff;
@@ -68,4 +66,9 @@
     cursor: pointer;
     transition: 0.3s;
   }
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
 }
