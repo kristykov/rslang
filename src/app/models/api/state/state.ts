@@ -1,8 +1,10 @@
 export class State {
   currentPage: number;
+  isAuthorized: boolean;
 
   constructor() {
     this.currentPage = 1;
+    this.isAuthorized = false;
   }
 
   // optional methods - not required for All fields
@@ -12,6 +14,10 @@ export class State {
 
   get getCurrentPage() {
     return this.currentPage;
+  }
+
+  checkAuthorized() {
+    return this.isAuthorized;
   }
 }
 

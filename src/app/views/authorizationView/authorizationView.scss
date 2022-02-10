@@ -59,13 +59,23 @@
   padding: 10px;
   color: #2e3844;
   transition: 0.3s;
+
+  &:hover {
+    width: 250px;
+    height: 60px;
+    padding: 5px;
+    background: #ffe252;
+    border: 1px solid #ffe250;
+    font-size: 32px;
+  }
 }
 
-.register-btn:hover {
-  width: 250px;
-  height: 60px;
-  padding: 5px;
-  background: #ffe252;
-  border: 1px solid #ffe250;
-  font-size: 32px;
+.sign-in-link {
+  font-size: 16px;
+  color: #bebebe;
+  transition: 0.3s;
+
+  &:hover {
+    color: #7dcddb;
+  }
 }

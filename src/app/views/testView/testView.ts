@@ -1,6 +1,6 @@
 import './testView.scss';
 import Component from '../_templates/component';
-import Header from '../_templates/header/header';
+import { Header } from '../_templates/header/header';
 import Footer from '../_templates/footer/footer';
 
 class TestView extends Component {

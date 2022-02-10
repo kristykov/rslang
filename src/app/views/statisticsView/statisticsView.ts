@@ -1,6 +1,6 @@
 import './statisticsView.scss';
 import Component from '../_templates/component';
-import Header from '../_templates/header/header';
+import { Header } from '../_templates/header/header';
 import Footer from '../_templates/footer/footer';
 
 class StatisticsView extends Component {
@@ -18,7 +18,11 @@ class StatisticsView extends Component {
   constructor(root: HTMLElement) {
     super('div', ['statistics-view'], root);
     this.header = new Header(this.container);
-    this.frontBlock = new Component('div', ['statistics-block', 'app-center-block'], this.container);
+    this.frontBlock = new Component(
+      'div',
+      ['statistics-block', 'app-center-block'],
+      this.container,
+    );
     this.footer = new Footer(this.container);
     this.frontBlock.container.append(this.frontBlockWrapper.container);
     this.frontBlockWrapper.container.innerHTML = this.frontBlockContent;
