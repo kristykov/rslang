@@ -79,3 +79,12 @@
     color: #7dcddb;
   }
 }
+
+.view {
+  text-decoration: underline;
+  transition: 0.3s;
+
+  &:hover {
+    color: #7dcddb;
+  }
+}
