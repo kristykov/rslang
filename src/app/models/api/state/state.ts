@@ -22,17 +22,6 @@ export class State {
     this.textbookShowDifficult = false;
     this.textbookShowLearned = false;
     this.words = [];
-    // get all the words from the server
-    // create an object for each
-    /*
-    [{
-      eng: 'word',
-      ru: 'translation',
-      match: true,
-    }]
-    */
-    // create two variables: correctMatches = 0 & incorrectMatches = 0;
-    // create a variable to track the current index of a word
   }
 
   /* // optional methods - not required for All fields
