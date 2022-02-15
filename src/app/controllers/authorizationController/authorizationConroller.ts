@@ -1,6 +1,7 @@
 import AuthorizationView from '../../views/authorizationView/authorizationView';
 import { State, state } from '../../models/api/state/state';
 import Api from '../../models/api/api/AuthApi';
+import defaultRoutes from '../../models/router/defaultRoutes';
 
 class AuthorizationController {
   view: AuthorizationView;
@@ -33,10 +34,14 @@ class AuthorizationController {
         const resp = await this.api
           .registerUser(name.value, email.value, password.value)
           .then((response) => {
+            console.log(response.isSucceeded);
             if (response.isSucceeded) {
               this.model.isAuth = true;
+              document.location.href = `#${defaultRoutes.frontpage.path}`;
             } else {
-              this.chooseView();
+              this.throwErrDescription(
+                this.view.frontBlock.container.querySelector('.err-description') as HTMLElement,
+              );
             }
           });
       }
@@ -57,9 +62,28 @@ class AuthorizationController {
       const resp = await this.api.signInUser(email.value, password.value).then((response) => {
         if (response.isSucceeded) {
           this.model.isAuth = true;
+          document.location.href = `#${defaultRoutes.frontpage.path}`;
+        } else {
+          this.throwErrDescription(
+            this.view.frontBlock.container.querySelector('.err-description') as HTMLElement,
+          );
         }
       });
     });
+  }
+
+  throwErrDescription(errDescription: HTMLElement) {
+    if (errDescription.classList.contains('hide')) {
+      errDescription.classList.remove('hide');
+    }
+    errDescription.classList.add('visible');
+
+    setTimeout(() => {
+      if (errDescription.classList.contains('visible')) {
+        errDescription.classList.remove('visible');
+      }
+      errDescription.classList.add('hide');
+    }, 5000);
   }
 
   chooseView() {

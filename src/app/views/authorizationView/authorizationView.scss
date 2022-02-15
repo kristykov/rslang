@@ -103,3 +103,62 @@
     transition: 0.3s;
   }
 }
+
+.visible {
+  animation-name: visible;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.hide {
+  animation-name: hide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+  from {
+    visibility: visible;
+    width: fit-content;
+    height: fit-content;
+  }
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    border: 0;
+    padding: 0px;
+    font-size: 0;
+  }
+}
+
+@keyframes visible {
+  from {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    border: 0;
+    padding: 0px;
+    font-size: 0;
+  }
+  to {
+    visibility: visible;
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.err-description {
+  background: none;
+  width: fit-content;
+  position: absolute;
+  left: 40%;
+  top: 100px;
+  z-index: 50;
+  font-size: 36px;
+  color: #7dcddb;
+  overflow: hidden;
+  visibility: hidden;
+}

@@ -14,17 +14,19 @@ class AuthorizationView extends Component {
   </div>`;
 
   authorizationBlockContent = `<section class="authorization-box">
+      <div class="err-description">OOPS! Incorrect e-mail or password</div>
       <img src="/assets/authorization-img.png" alt="authorization img" class="authorization-img">
       <div class="authorization">
         <p id="sign-in-link" class="view">don't have an account yet? Register now!</p>
         <h2 class="authorization-title">Nice to see you again!</h2>
         <span class="inputs-name">Email: <input type="email" class="text-input inputs" id="email"></span> 
         <span class="inputs-name">Password: <input type="password" class="password-input inputs" id="password"></span> 
-        <a href="#${defaultRoutes.frontpage.path}"><button class="signIn-btn" id="signIn-btn">sign in</button></a>
+        <button class="signIn-btn" id="signIn-btn">sign in</button>
       </div>
     </section>`;
 
   registrationBlockContent = ` <section class="authorization-box">
+      <div class="err-description">OOPS! Incorrect e-mail or password</div>
       <img src="/assets/authorization-img.png" alt="authorization img" class="authorization-img">
       <div class="authorization">
         <p id="register-link" class="view">Do you already have an account?</p>
@@ -34,7 +36,7 @@ class AuthorizationView extends Component {
         <div class="inputs-name">Password: <input type="password" class="password-input inputs" id="password"><br>
         <span>password length must be more than 8 characters</span>
         </div> 
-        <a href="#${defaultRoutes.frontpage.path}"><button class="register-btn" id="register-btn">Register</button></a>
+        <button class="register-btn" id="register-btn">Register</button>
       </div>
     </section>`;
 
